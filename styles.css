@@ -44,15 +44,14 @@ body {
     transition: transform 0.1s ease;
     opacity: 0;
     animation: fadeIn 1.5s ease-out forwards;
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 100 );
-    filter: brightness(5); 
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 1 ); /* Add bloom effect */
+    filter: brightness(2); /* Increase brightness */
 }
 
 @keyframes twinkle {
     0%, 100% { opacity: 1; }
-    70% { opacity: 0.7; }
+    50% { opacity: 0.5; }
 }
-
 
 .content-container {
     position: absolute;
@@ -71,13 +70,6 @@ body {
     animation: fadeIn 1.5s ease-out 0.75s forwards;
 }
 
-.parallax-container {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    perspective: 1000px;
-}
-
 h1 {
     margin-bottom: 1rem;
     font-size: 2.5rem;
@@ -88,47 +80,35 @@ p {
     margin-bottom: 1rem;
 }
 
+.parallax-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+}
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 5rem; 
+    gap: 2rem;
 }
+
 .social-button {
-    padding: 0.5rem 1rem;
-    border: 2px solid white;
-    border-radius: 5px;
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 2rem;
     transition: all 0.3s ease;
 }
 
 .social-button:hover {
-    background-color: white;
-    color: black;
+    transform: scale(1.2);
 }
 
-#github-button {
-    border-color: #6e5494;
+.roblox-icon {
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.3s ease;
 }
 
-#discord-button {
-    border-color: #7289da;
-}
-
-#roblox-button {
-    border-color: #00a2ff;
-}
-
-#github-button:hover {
-    background-color: #6e5494;
-}
-
-#discord-button:hover {
-    background-color: #7289da;
-}
-
-#roblox-button:hover {
-    background-color: #00a2ff;
+.roblox-icon:hover {
+    transform: scale(1.2);
 }
