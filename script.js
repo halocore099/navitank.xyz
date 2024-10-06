@@ -1,7 +1,7 @@
 // Wait for initial blur animation
 setTimeout(() => {
     initializeStars();
-}, 500); // Start creating stars after a slight delay
+}, 500); 
 
 function initializeStars() {
     // Create stars
@@ -9,22 +9,20 @@ function initializeStars() {
         const star = document.createElement('div');
         star.className = 'star';
     
-        // Random size between 2 and 6 pixels (increased max size)
         const size = Math.random() * 4 + 2;
         star.style.width = `${size}px`;
         star.style.height = `${size}px`;
     
-        // Random position
+
         star.style.left = `${Math.random() * 100}%`;
         star.style.top = `${Math.random() * 100}%`;
     
-        // Add twinkling animation
-        const animationDuration = Math.random() * 3 + 2; // Between 2 and 5 seconds
+   
+        const animationDuration = Math.random() * 3 + 2; // 
         star.style.animation = `fadeIn 1.5s ease-out forwards, twinkle ${animationDuration}s ease-in-out infinite`;
     
         document.getElementById('stars-container').appendChild(star);
-    
-        // Animate star movement
+
         let yPos = parseFloat(star.style.top);
         setInterval(() => {
             yPos -= 0.05;
@@ -37,12 +35,11 @@ function initializeStars() {
     
         return star;
     }
-    // Create initial stars
+  
     for (let i = 0; i < 100; i++) {
         createStar();
     }
 
-    // Add new stars periodically
     setInterval(() => {
         if (document.getElementsByClassName('star').length < 150) {
             createStar();
@@ -50,7 +47,6 @@ function initializeStars() {
     }, 1000);
 }
 
-// Parallax effect
 document.addEventListener('mousemove', (e) => {
     const container = document.getElementById('stars-container');
     const stars = document.getElementsByClassName('star');
@@ -64,4 +60,17 @@ document.addEventListener('mousemove', (e) => {
         const translateY = mouseY * depth;
         star.style.transform = `translate(${translateX}px, ${translateY}px)`;
     }
+});
+
+
+const buttons = document.querySelectorAll('.social-button');
+
+buttons.forEach(button => {
+    button.addEventListener('mouseover', () => {
+        button.style.transform = 'scale(1.1)';
+    });
+
+    button.addEventListener('mouseout', () => {
+        button.style.transform = 'scale(1)';
+    });
 });
