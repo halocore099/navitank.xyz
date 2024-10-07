@@ -122,14 +122,14 @@ p {
 /* Add styles for profile picture */
 .profile-picture {
     position: absolute;
-    top: -4rem;
+    top: 1rem; /* Adjust vertical position as needed */
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
-    z-index: 3; /* Ensure the profile picture is on top of the content */
+    z-index: 3;
 }
 
 .profile-picture img {
