@@ -8,9 +8,15 @@ body {
     background: #000000;
     min-height: 100vh;
     overflow: hidden;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins to the body */
     color: white;
     position: relative;
+}
+
+/* ... other styles ... */
+
+h1, h2, h3, h4, h5, h6 { /* Apply Space Mono to all headings */
+    font-family: 'Space Mono', monospace;
 }
 
 .initial-blur {
@@ -111,4 +117,72 @@ p {
 
 .roblox-icon:hover {
     transform: scale(1.2);
+}
+
+/* Add styles for profile picture */
+.profile-picture {
+    position: absolute;
+    top: -4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 3; /* Ensure the profile picture is on top of the content */
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    opacity: 100;
+    animation: fadeIn 1.5s ease-out 0.75s forwards;
+}
+
+/* Add styles for go back button */
+.go-back-button {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+/* Add styles for no hello link */
+.no-hello-link {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+.go-back-button a, .no-hello-link a {
+    font-size: 0.9rem;
+    padding: 8px 15px; /* Adjust padding for better visual balance */
+    border-radius: 10px; /* Rounded corners */
+    transition: all 0.3s ease;
+    background-color: white;
+    color: black;
+    font-family: 'Poppins', sans-serif; /* Choose a font you like */
+    text-decoration: none; /* Remove default link underline */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+.go-back-button a:hover, .no-hello-link a:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }

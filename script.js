@@ -47,6 +47,18 @@ function initializeStars() {
     }, 1000);
 }
 
+// Add event listener for go back button
+document.getElementById('go-back-button').addEventListener('click', () => {
+    window.open('https://navitank.xyz', '_blank');
+});
+
+// Add event listener for no hello link
+document.getElementById('no-hello-link').addEventListener('click', () => {
+    window.open('https://navitank.xyz/nohello', '_blank');
+});
+
+
+
 document.addEventListener('mousemove', (e) => {
     const container = document.getElementById('stars-container');
     const stars = document.getElementsByClassName('star');
