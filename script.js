@@ -1,4 +1,4 @@
-// Wait for initial blur animation
+
 setTimeout(() => {
     initializeStars();
 }, 500); 
