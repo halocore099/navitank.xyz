@@ -1,88 +1,65 @@
-
-setTimeout(() => {
-    initializeStars();
-}, 500); 
-
-function initializeStars() {
-    // Create stars
-    function createStar() {
-        const star = document.createElement('div');
-        star.className = 'star';
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('bgVideo');
+    const dropdownBtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+    const tiltElement = document.querySelector('.tilt-effect');
     
-        const size = Math.random() * 4 + 2;
-        star.style.width = `${size}px`;
-        star.style.height = `${size}px`;
-    
+    function adjustVideoSize() {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const videoRatio = video.videoWidth / video.videoHeight;
+        const windowRatio = windowWidth / windowHeight;
 
-        star.style.left = `${Math.random() * 100}%`;
-        star.style.top = `${Math.random() * 100}%`;
-    
-   
-        const animationDuration = Math.random() * 3 + 2; // 
-        star.style.animation = `fadeIn 1.5s ease-out forwards, twinkle ${animationDuration}s ease-in-out infinite`;
-    
-        document.getElementById('stars-container').appendChild(star);
-
-        let yPos = parseFloat(star.style.top);
-        setInterval(() => {
-            yPos -= 0.05;
-            if (yPos < -5) {
-                yPos = 105;
-                star.style.left = `${Math.random() * 100}%`;
-            }
-            star.style.top = `${yPos}%`;
-        }, 50);
-    
-        return star;
-    }
-  
-    for (let i = 0; i < 100; i++) {
-        createStar();
-    }
-
-    setInterval(() => {
-        if (document.getElementsByClassName('star').length < 150) {
-            createStar();
+        if (windowRatio > videoRatio) {
+            video.style.width = '100%';
+            video.style.height = 'auto';
+        } else {
+            video.style.width = 'auto';
+            video.style.height = '100%';
         }
-    }, 1000);
-}
-
-// Add event listener for go back button
-document.getElementById('go-back-button').addEventListener('click', () => {
-    window.open('https://navitank.xyz', '_blank');
-});
-
-// Add event listener for no hello link
-document.getElementById('no-hello-link').addEventListener('click', () => {
-    window.open('https://navitank.xyz/nohello', '_blank');
-});
-
-
-
-document.addEventListener('mousemove', (e) => {
-    const container = document.getElementById('stars-container');
-    const stars = document.getElementsByClassName('star');
-    
-    const mouseX = (e.clientX / window.innerWidth - 0.5) * 20;
-    const mouseY = (e.clientY / window.innerHeight - 0.5) * 20;
-
-    for (let star of stars) {
-        const depth = Math.random() * 0.5 + 0.5;
-        const translateX = mouseX * depth;
-        const translateY = mouseY * depth;
-        star.style.transform = `translate(${translateX}px, ${translateY}px)`;
     }
-});
 
+    video.addEventListener('loadedmetadata', adjustVideoSize);
+    window.addEventListener('resize', adjustVideoSize);
 
-const buttons = document.querySelectorAll('.social-button');
+    // Add this function to restart the video when it ends
+    function restartVideo() {
+        video.currentTime = 0;
+        video.play();
+    }
 
-buttons.forEach(button => {
-    button.addEventListener('mouseover', () => {
-        button.style.transform = 'scale(1.1)';
+    video.addEventListener('ended', restartVideo);
+
+    // Toggle dropdown on click
+    dropdownBtn.addEventListener('click', function() {
+        dropdownContent.classList.toggle('show');
     });
 
-    button.addEventListener('mouseout', () => {
-        button.style.transform = 'scale(1)';
+    // Close dropdown when clicking outside
+    window.addEventListener('click', function(event) {
+        if (!event.target.matches('.dropbtn')) {
+            if (dropdownContent.classList.contains('show')) {
+                dropdownContent.classList.remove('show');
+            }
+        }
+    });
+
+    // More intense tilt effect
+    tiltElement.addEventListener('mousemove', function(e) {
+        const tiltMax = 15; // Increased from 5 to 15 for more intensity
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const tiltX = (x - centerX) / centerX * tiltMax;
+        const tiltY = (y - centerY) / centerY * tiltMax;
+        
+        this.style.transform = `perspective(1000px) rotateX(${-tiltY}deg) rotateY(${tiltX}deg) scale(1.05)`;
+    });
+
+    tiltElement.addEventListener('mouseleave', function() {
+        this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
     });
 });

@@ -1,38 +1,30 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Navitank</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frosted Glass Website</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="initial-blur"></div>
-    <div class="parallax-container" id="stars-container"></div>
-    <div class="content-container">
-        <!-- Add profile picture -->
-        <div class="profile-picture">
-            <img src="profile.jpg" alt="Profile Picture">
+<body class="blur-in">
+    <video autoplay muted loop id="bgVideo" preload="auto">
+        <source src="farts.mp4" type="video/mp4">
+    </video>
+    <div class="dropdown">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
         </div>
-        <h1>farts</h1>
-        <p>yapping part goes here lol</p>
-        <div class="button-container">
-            <a href="https://github.com/halocore099" target="_blank" class="social-button" id="github-button"><i class="fab fa-github"></i></a>
-            <a href="https://discord.com/users/529476730088587314" target="_blank" class="social-button" id="discord-button"><i class="fab fa-discord"></i></a>
-            <a href="https://www.roblox.com/users/youruserid/profile" target="_blank" class="social-button" id="roblox-button"><i class="fas fa-gamepad"></i></a>
-        </div>
-        <!-- Add go back button -->
-        <div class="go-back-button">
-            <a href="#" target="_blank" class="social-button" id="go-back-button">Go Back</a>
-        </div>
-        <!-- Add no hello link -->
-        <div class="no-hello-link">
-            <a href="#" class="social-button" id="no-hello-link">No Hello</a>
+    </div>
+    <div class="content">
+        <div class="frosted-glass tilt-effect">
+            <div class="profile-picture"></div>
+            <h1>Your Title Here</h1>
+            <p>Your text goes here. You can add as much content as you want inside this frosted glass box.</p>
         </div>
     </div>
     <script src="script.js"></script>
 </body>
-</html>   
+</html>
