@@ -1,34 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const video = document.getElementById('bgVideo');
     const dropdownBtn = document.querySelector('.dropbtn');
     const dropdownContent = document.querySelector('.dropdown-content');
     const tiltElement = document.querySelector('.tilt-effect');
-    
-    function adjustVideoSize() {
-        const windowWidth = window.innerWidth;
-        const windowHeight = window.innerHeight;
-        const videoRatio = video.videoWidth / video.videoHeight;
-        const windowRatio = windowWidth / windowHeight;
-
-        if (windowRatio > videoRatio) {
-            video.style.width = '100%';
-            video.style.height = 'auto';
-        } else {
-            video.style.width = 'auto';
-            video.style.height = '100%';
-        }
-    }
-
-    video.addEventListener('loadedmetadata', adjustVideoSize);
-    window.addEventListener('resize', adjustVideoSize);
-
-    // Add this function to restart the video when it ends
-    function restartVideo() {
-        video.currentTime = 0;
-        video.play();
-    }
-
-    video.addEventListener('ended', restartVideo);
 
     // Toggle dropdown on click
     dropdownBtn.addEventListener('click', function() {
@@ -44,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // More intense tilt effect
+    // Tilt effect
     tiltElement.addEventListener('mousemove', function(e) {
         const tiltMax = 15; // Increased from 5 to 15 for more intensity
         const rect = this.getBoundingClientRect();
