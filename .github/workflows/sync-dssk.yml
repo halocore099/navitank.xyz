@@ -1,0 +1,33 @@
+name: Sync DSSK Folder
+
+on:
+  push:
+    branches:
+      - main  # This triggers the action when you push to the main branch
+
+jobs:
+  sync-dssk:
+    runs-on: ubuntu-latest  # The action will run on an Ubuntu runner
+
+    steps:
+      - name: Checkout the public repo
+        uses: actions/checkout@v3  # Checkout the code of your public repo
+
+      - name: Set up GitHub token for private repo
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}  # Use the token stored in GitHub secrets
+        run: |
+          # Clone the private repo containing the dssk folder
+          git clone https://$GITHUB_TOKEN@github.com/halocore099/DSSK.git temp_dssk
+          
+          # Copy the dssk folder from private repo to public repo
+          mkdir -p ./dssk  # Ensure the folder exists
+          cp -r temp_dssk/dssk/* ./dssk/  # Copy contents from private repo to public repo
+
+          # Clean up temporary folder
+          rm -rf temp_dssk
+
+          # Commit and push the updated content
+          git add ./dssk
+          git commit -m "Sync dssk folder from private repo"
+          git push  # Push changes to the public repo
