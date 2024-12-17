@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const dropdownBtn = document.querySelector('.dropbtn');
     const dropdownContent = document.querySelector('.dropdown-content');
     const tiltElement = document.querySelector('.tilt-effect');
+    const DISCORD_ID = '529476730088587314';
 
     // Toggle dropdown on click
     dropdownBtn.addEventListener('click', function() {
@@ -17,6 +18,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    async function updateDiscordStatus() {
+        const response = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
+        const data = await response.json();
+        
+        const avatar = document.getElementById('discord-avatar');
+        const username = document.getElementById('discord-username');
+        const activity = document.getElementById('discord-activity');
+        
+        avatar.src = `https://cdn.discordapp.com/avatars/${DISCORD_ID}/${data.data.discord_user.avatar}`;
+        username.textContent = `${data.data.discord_user.username}#${data.data.discord_user.discriminator}`;
+        
+        if (data.data.activities.length > 0) {
+            activity.textContent = `Playing ${data.data.activities[0].name}`;
+        } else {
+            activity.textContent = 'Online';
+        }
+    }
+    
+    updateDiscordStatus();
+    setInterval(updateDiscordStatus, 30000);
+    
     // Tilt effect
     tiltElement.addEventListener('mousemove', function(e) {
         const tiltMax = 15; // Increased from 5 to 15 for more intensity

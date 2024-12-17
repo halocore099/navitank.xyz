@@ -46,6 +46,15 @@ body::before {
     max-width: 400px;
 }
 
+.discord-status {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(88, 101, 242, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .profile-picture {
     width: 150px;
     height: 150px;
@@ -169,4 +178,32 @@ p {
 .mute-button:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
+}
+
+
+.discord-presence {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#discord-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.discord-info {
+    color: white;
+    text-align: left;
+}
+
+#discord-username {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#discord-activity {
+    font-size: 0.9em;
+    opacity: 0.9;
 }
