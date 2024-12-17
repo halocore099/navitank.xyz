@@ -74,6 +74,7 @@ p {
 }
 
 .dropbtn {
+    font-family: 'Poppins', sans-serif;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     color: white;
@@ -83,6 +84,7 @@ p {
     cursor: pointer;
     border-radius: 25px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dropbtn:hover {
@@ -149,19 +151,22 @@ p {
 .mute-button {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 100px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     color: white;
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: 12px 16px;
+    font-size: 18px;
     border: none;
     cursor: pointer;
     border-radius: 25px;
     transition: all 0.3s ease;
     z-index: 1000;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mute-button:hover {
     background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
