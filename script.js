@@ -35,4 +35,25 @@ document.addEventListener('DOMContentLoaded', function() {
     tiltElement.addEventListener('mouseleave', function() {
         this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
     });
+
+    // Add this new code for mute toggle functionality
+    const video = document.getElementById('bgVideo');
+    const muteButton = document.getElementById('muteToggle');
+    
+    function updateMuteButton() {
+        muteButton.querySelector('.mute-icon').textContent = video.muted ? '🔈' : '🔊';
+    }
+
+    muteButton.addEventListener('click', function() {
+        video.muted = !video.muted;
+        updateMuteButton();
+    });
+
+    // Try to unmute video after a user interaction
+    document.addEventListener('click', function() {
+        if (video.muted) {
+            video.muted = false;
+            updateMuteButton();
+        }
+    }, { once: true });
 });

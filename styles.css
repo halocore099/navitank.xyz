@@ -39,7 +39,7 @@ body::before {
 
 .frosted-glass {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border-radius: 10px;
     padding: 30px;
     text-align: center;
@@ -143,4 +143,25 @@ p {
 
 .tilt-effect {
     transition: transform 0.1s ease-out;
+}
+
+/* Add these styles to your existing CSS */
+.mute-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.mute-button:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
