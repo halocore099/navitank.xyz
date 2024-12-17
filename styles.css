@@ -2,12 +2,11 @@ body, html {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: black;
-    background: url('farts.mp4') no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
 }
 
+body {
+    position: relative;
+}
 body::before {
     content: '';
     position: fixed;
@@ -51,7 +50,7 @@ body::before {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-image: url('profile.jpg');
+    background-image: url('assets/profile.jpg');
     background-size: cover;
     background-position: center;
     margin: 0 auto 20px;
