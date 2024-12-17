@@ -31,7 +31,12 @@ jobs:
           # Clean up temporary folder
           rm -rf temp_dssk
 
-          # Commit and push the updated content
-          git add ./dssk
-          git commit -m "Sync dssk folder from private repo"
+          # Add dssk folder to .gitignore to ensure it is not tracked in the public repo
+          echo "dssk/" >> .gitignore  # Ignore the dssk folder in the public repo
+          
+          # Commit the updated .gitignore file and other changes (if necessary)
+          git add .gitignore  # Add the updated .gitignore file
+          git commit -m "Sync dssk folder from private repo and update .gitignore"
+
+          # Push changes to the public repo
           git push  # Push changes to the public repo
