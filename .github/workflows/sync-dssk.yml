@@ -20,6 +20,10 @@ jobs:
           # Clone the private repo containing the dssk folder
           git clone https://$GITHUB_TOKEN@github.com/halocore099/DSSK.git temp_dssk
           
+          # Set up Git configuration to avoid the "unknown author" error
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          
           # Copy the dssk folder from private repo to public repo
           mkdir -p ./dssk  # Ensure the folder exists
           cp -r temp_dssk/dssk/* ./dssk/  # Copy contents from private repo to public repo
