@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('ZD4>?Ttc@7Ejxt4L+~2FGh1pM=]5#?JQaawzMu!Z]WZ^X%5=WNV=iFyxsNgF%t@u!rLe>EZ^iUxwZ6?+CyJXJHc2Xyyx!bvAxYko');
+    console.log('Well let me tell you something... you will never find out what this does neither will you ever know.\n Try all u want but you will fail.\n Stress and anxiety will take over your body as you grasp for the answer on your last breath.\n You die... in pain, as you wish you would have done something else in your life.......')
     const dropdownBtn = document.querySelector('.dropbtn');
     const dropdownContent = document.querySelector('.dropdown-content');
     const tiltElement = document.querySelector('.tilt-effect');
