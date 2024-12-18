@@ -24,7 +24,7 @@ To run this website locally:
 
 ```bash
 git clone https://github.com/yourusername/navitank.xyz.git
+```
+**Caution: Some functions of the website are hosted by Cloudflare Workers, the functionality of the website may be limited.**
 
-Caution: Some functions of the website are hosted by Cloudflare Workers, the functionality of the website may be limited.
-
-Beware: This is a work in progress.
+# Beware: This is a work in progress.
