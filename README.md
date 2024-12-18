@@ -1,4 +1,4 @@
-# Navitank.xyz
+# navitank.xyz
 
 Welcome to the repository for navitank.xyz - my personal website and digital playground!
 
@@ -8,9 +8,10 @@ This website serves as my online presence where I showcase my work, thoughts, an
 
 ## Features
 
-- Personal portfolio
-- Project showcase
+- Personal Info
+- Random Stuff
 - Contact information
+- Error Handler
 
 ## Tech Stack
 
