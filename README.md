@@ -26,7 +26,7 @@ This website is built with:
 To run this website locally:
 
 ```bash
-git clone https://github.com/yourusername/navitank.xyz.git
+git clone https://github.com/halocore099/navitank.xyz.git
 ```
 **Caution: Some functions of the website are hosted by Cloudflare Workers and Vercel, the functionality of the website may be limited.**
 
