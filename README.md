@@ -12,12 +12,14 @@ This website serves as my online presence where I showcase my work, thoughts, an
 - Random Stuff
 - Contact information
 - Error Handler
+- Personal Upioguard
 
 ## Tech Stack
 
 This website is built with:
 - Cloudflare Pages
 - Cloudflare Workers
+- Vercel
 
 ## Local Development
 
@@ -26,6 +28,6 @@ To run this website locally:
 ```bash
 git clone https://github.com/yourusername/navitank.xyz.git
 ```
-**Caution: Some functions of the website are hosted by Cloudflare Workers, the functionality of the website may be limited.**
+**Caution: Some functions of the website are hosted by Cloudflare Workers and Vercel, the functionality of the website may be limited.**
 
 # Beware: This is a work in progress.
