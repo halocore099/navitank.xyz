@@ -1,34 +1,32 @@
-// Core encryption/decryption functions remain the same
-const encryptString = (str) => {
-    return btoa(str.split('').map(char => 
-        String.fromCharCode(char.charCodeAt(0) + 5)
-    ).join(''));
-};
+const encryptString = (str) => btoa(str.split('').map(char => 
+    String.fromCharCode(char.charCodeAt(0) + 5)
+).join(''));
 
-const decryptString = (str) => {
-    return atob(str).split('').map(char =>
-        String.fromCharCode(char.charCodeAt(0) - 5)
-    ).join('');
-};
+const decryptString = (str) => atob(str).split('').map(char =>
+    String.fromCharCode(char.charCodeAt(0) - 5)
+).join('');
 
-// Constants
 const PASSWORD = encryptString("Lightthecampfire");
 const SECRET_KEY = encryptString("ZD4>?Ttc@7Ejxt4L+~2FGh1pM=]5#?JQaawzMu!Z]WZ^X%5=WNV=iFyxsNgF%t@u!rLe>EZ^iUxwZ6?+CyJXJHc2Xyyx!bvAxYko");
 
-// Commands
 const COMMANDS = {
     'home': 'https://navitank.xyz/',
-    'exit': null, // Will be handled specially
+    'exit': null,
     'naviguard': 'https://naviguard.navitank.xyz/',
     'nohello': 'https://navitank.xyz/nohello',
-    'help': null // Will be handled specially
+    'help': null
 };
 
-// Dark Souls themed quotes remain the same
-const FAILURE_QUOTES = [/* ... previous quotes ... */];
-const SUCCESS_QUOTE = "Ahh, you were at my side all along. My true mentor... My guiding moonlight...";
+const FAILURE_QUOTES = [
+    "Bearer... Seek souls. Larger, more powerful souls. Seek the King, that is the only way. Lest this land swallow you whole... As it has so many others.",
+    "Life is brilliant. Beautiful. It enchants us, to the point of obsession. Some are true to their purpose, though they are but shells, flesh, and mind.",
+    "Many monarchs have come and gone. One drowned in poison, another succumbed to flame. Still another slumbers in a realm of ice.",
+    "The First Flame quickly fades. Darkness will shortly settle. But one day, tiny flames will dance across the darkness.",
+    "You shall never know what this means, for the truth is buried in the depths of despair. Seek it if you must, but remember — the journey will only bring suffering. The path you choose will lead to madness, for some truths are best left unseen. Your soul will be the price for knowledge, and in the end, you shall wish you never sought the light.",
+    "I may be small, but I will die a colossus."
+];
 
-// Help message
+const SUCCESS_QUOTE = "Ahh, you were at my side all along. My true mentor... My guiding moonlight...";
 const HELP_MESSAGE = `
 Available commands:
 - home: Go to NaviTank homepage
@@ -43,10 +41,9 @@ input.addEventListener('keypress', function(event) {
         const userInput = input.value.toLowerCase().trim();
         input.value = '';
         
-        // Handle commands
         if (COMMANDS.hasOwnProperty(userInput)) {
             if (userInput === 'help') {
-                output.innerHTML = `<div style="color: #00ff00">${HELP_MESSAGE}</div>`;
+                updateOutput(HELP_MESSAGE, '#00ff00');
                 return;
             }
             if (userInput === 'exit') {
@@ -57,15 +54,11 @@ input.addEventListener('keypress', function(event) {
             return;
         }
         
-        // Handle password check
         if (userInput === decryptString(PASSWORD)) {
-            output.innerHTML = `<div style="color: #ffffff">
-                ${SUCCESS_QUOTE}<br><br>
-                SECRET KEY: ${decryptString(SECRET_KEY)}
-            </div>`;
+            updateOutput(`${SUCCESS_QUOTE}<br><br>SECRET KEY: ${decryptString(SECRET_KEY)}`);
         } else {
             const randomQuote = FAILURE_QUOTES[Math.floor(Math.random() * FAILURE_QUOTES.length)];
-            output.innerHTML = `<div style="color: #808080">${randomQuote}</div>`;
+            updateOutput(randomQuote, '#808080');
         }
     }
 });
