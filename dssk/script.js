@@ -1,1 +1,71 @@
-const _0x1b0338=_0x16f0;(function(_0x5ac26a,_0x7dc21d){const _0x1e7496=_0x16f0,_0x1342d4=_0x5ac26a();while(!![]){try{const _0x4601cd=parseInt(_0x1e7496(0x9c))/0x1+-parseInt(_0x1e7496(0x91))/0x2+-parseInt(_0x1e7496(0x9b))/0x3*(parseInt(_0x1e7496(0x88))/0x4)+parseInt(_0x1e7496(0x9f))/0x5+-parseInt(_0x1e7496(0x82))/0x6*(-parseInt(_0x1e7496(0x95))/0x7)+-parseInt(_0x1e7496(0x9e))/0x8*(parseInt(_0x1e7496(0x89))/0x9)+parseInt(_0x1e7496(0xa2))/0xa;if(_0x4601cd===_0x7dc21d)break;else _0x1342d4['push'](_0x1342d4['shift']());}catch(_0x4c4d39){_0x1342d4['push'](_0x1342d4['shift']());}}}(_0x58bf,0x3de42));function _0x16f0(_0x30da51,_0x5c97a5){const _0x58bf14=_0x58bf();return _0x16f0=function(_0x16f0e7,_0x595a93){_0x16f0e7=_0x16f0e7-0x81;let _0x5f29c6=_0x58bf14[_0x16f0e7];return _0x5f29c6;},_0x16f0(_0x30da51,_0x5c97a5);}const encryptString=_0x29312d=>{const _0x22fd6a=_0x16f0;return btoa(_0x29312d[_0x22fd6a(0x86)]('')['map'](_0x545723=>String[_0x22fd6a(0x9d)](_0x545723['charCodeAt'](0x0)+0x5))[_0x22fd6a(0x96)](''));},decryptString=_0x52087f=>{const _0xd423d4=_0x16f0;return atob(_0x52087f)[_0xd423d4(0x86)]('')['map'](_0x5bf6c6=>String[_0xd423d4(0x9d)](_0x5bf6c6[_0xd423d4(0x8a)](0x0)-0x5))[_0xd423d4(0x96)]('');},PASSWORD=encryptString(_0x1b0338(0x81)),SECRET_KEY=encryptString(_0x1b0338(0x90)),FAILURE_QUOTES=[_0x1b0338(0x8b),_0x1b0338(0x8d),_0x1b0338(0x8c),_0x1b0338(0xa1),_0x1b0338(0x97),_0x1b0338(0x94)],SUCCESS_QUOTE=_0x1b0338(0x8f);function _0x58bf(){const _0x24860f=['2870370eDRJnY','Lightthecampfire','17610IgCgIV','Enter','random','addEventListener','split','<br><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20SECRET\x20KEY:\x20','2116KXNHTQ','9tgVbJc','charCodeAt','Bearer...\x20Seek\x20souls.\x20Larger,\x20more\x20powerful\x20souls.\x20Seek\x20the\x20King,\x20that\x20is\x20the\x20only\x20way.\x20Lest\x20this\x20land\x20swallow\x20you\x20whole...\x20As\x20it\x20has\x20so\x20many\x20others.','Life\x20is\x20brilliant.\x20Beautiful.\x20It\x20enchants\x20us,\x20to\x20the\x20point\x20of\x20obsession.\x20Some\x20are\x20true\x20to\x20their\x20purpose,\x20though\x20they\x20are\x20but\x20shells,\x20flesh\x20and\x20mind.','Many\x20monarchs\x20have\x20come\x20and\x20gone.\x20One\x20drowned\x20in\x20poison,\x20another\x20succumbed\x20to\x20flame.\x20Still\x20another\x20slumbers\x20in\x20a\x20realm\x20of\x20ice.','key','You\x20shall\x20never\x20know\x20what\x20this\x20means,\x20for\x20the\x20truth\x20is\x20buried\x20in\x20the\x20depths\x20of\x20despair.\x20Seek\x20it\x20if\x20you\x20must,\x20but\x20remember\x20—\x20the\x20journey\x20will\x20only\x20bring\x20suffering.\x20The\x20path\x20you\x20choose\x20will\x20lead\x20to\x20madness,\x20for\x20some\x20truths\x20are\x20best\x20left\x20unseen.\x20Your\x20soul\x20will\x20be\x20the\x20price\x20for\x20knowledge,\x20and\x20in\x20the\x20end,\x20you\x20shall\x20wish\x20you\x20never\x20sought\x20the\x20light.','ZD4>?Ttc@7Ejxt4L+~2FGh1pM=]5#?JQaawzMu!Z]WZ^X%5=WNV=iFyxsNgF%t@u!rLe>EZ^iUxwZ6?+CyJXJHc2Xyyx!bvAxYko','11444ElwKes','innerHTML','length','Ahh,\x20you\x20were\x20at\x20my\x20side\x20all\x20along.\x20My\x20true\x20mentor...\x20My\x20guiding\x20moonlight...','7SBAtwG','join','The\x20First\x20Flame\x20quickly\x20fades.\x20Darkness\x20will\x20shortly\x20settle.\x20But\x20one\x20day,\x20tiny\x20flames\x20will\x20dance\x20across\x20the\x20darkness.','keypress','<div\x20style=\x22color:\x20#ffffff\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','</div>','2454PfSEht','502599xxArEX','fromCharCode','2380936IiRgES','984980vPwgHZ','floor','I\x20may\x20be\x20small,\x20but\x20I\x20will\x20die\x20a\x20colossus.'];_0x58bf=function(){return _0x24860f;};return _0x58bf();}input[_0x1b0338(0x85)](_0x1b0338(0x98),function(_0x46da04){const _0x4cf52a=_0x1b0338;if(_0x46da04[_0x4cf52a(0x8e)]===_0x4cf52a(0x83)){const _0x330c32=input['value'];input['value']='';if(_0x330c32===decryptString(PASSWORD))output[_0x4cf52a(0x92)]=_0x4cf52a(0x99)+SUCCESS_QUOTE+_0x4cf52a(0x87)+decryptString(SECRET_KEY)+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>';else{const _0x484160=FAILURE_QUOTES[Math[_0x4cf52a(0xa0)](Math[_0x4cf52a(0x84)]()*FAILURE_QUOTES[_0x4cf52a(0x93)])];output['innerHTML']='<div\x20style=\x22color:\x20#808080\x22>'+_0x484160+_0x4cf52a(0x9a);}}});
+// Core encryption/decryption functions remain the same
+const encryptString = (str) => {
+    return btoa(str.split('').map(char => 
+        String.fromCharCode(char.charCodeAt(0) + 5)
+    ).join(''));
+};
+
+const decryptString = (str) => {
+    return atob(str).split('').map(char =>
+        String.fromCharCode(char.charCodeAt(0) - 5)
+    ).join('');
+};
+
+// Constants
+const PASSWORD = encryptString("Lightthecampfire");
+const SECRET_KEY = encryptString("ZD4>?Ttc@7Ejxt4L+~2FGh1pM=]5#?JQaawzMu!Z]WZ^X%5=WNV=iFyxsNgF%t@u!rLe>EZ^iUxwZ6?+CyJXJHc2Xyyx!bvAxYko");
+
+// Commands
+const COMMANDS = {
+    'home': 'https://navitank.xyz/',
+    'exit': null, // Will be handled specially
+    'naviguard': 'https://naviguard.navitank.xyz/',
+    'nohello': 'https://navitank.xyz/nohello',
+    'help': null // Will be handled specially
+};
+
+// Dark Souls themed quotes remain the same
+const FAILURE_QUOTES = [/* ... previous quotes ... */];
+const SUCCESS_QUOTE = "Ahh, you were at my side all along. My true mentor... My guiding moonlight...";
+
+// Help message
+const HELP_MESSAGE = `
+Available commands:
+- home: Go to NaviTank homepage
+- exit: Return to previous page
+- naviguard: Go to NaviGuard
+- nohello: Learn about proper chat etiquette
+- help: Show this message
+`;
+
+input.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        const userInput = input.value.toLowerCase().trim();
+        input.value = '';
+        
+        // Handle commands
+        if (COMMANDS.hasOwnProperty(userInput)) {
+            if (userInput === 'help') {
+                output.innerHTML = `<div style="color: #00ff00">${HELP_MESSAGE}</div>`;
+                return;
+            }
+            if (userInput === 'exit') {
+                window.history.back();
+                return;
+            }
+            window.location.href = COMMANDS[userInput];
+            return;
+        }
+        
+        // Handle password check
+        if (userInput === decryptString(PASSWORD)) {
+            output.innerHTML = `<div style="color: #ffffff">
+                ${SUCCESS_QUOTE}<br><br>
+                SECRET KEY: ${decryptString(SECRET_KEY)}
+            </div>`;
+        } else {
+            const randomQuote = FAILURE_QUOTES[Math.floor(Math.random() * FAILURE_QUOTES.length)];
+            output.innerHTML = `<div style="color: #808080">${randomQuote}</div>`;
+        }
+    }
+});
