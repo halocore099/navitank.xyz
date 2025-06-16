@@ -134,15 +134,53 @@
             to { transform: translateY(0); }
         }
 
-        /* Hero Section */
+        /* Hero Section with Animated Wavy Gradient */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f0f0f 100%);
             position: relative;
             overflow: hidden;
+            isolation: isolate;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                45deg,
+                #667eea,
+                #764ba2,
+                #667eea,
+                #764ba2
+            );
+            background-size: 300% 300%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -2;
+            opacity: 0.7;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, #1a1a2e 0%, #16213e 50%, #0f0f0f 100%);
+            z-index: -1;
+            opacity: 0.9;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .hero-content {
@@ -214,6 +252,24 @@
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        .projects::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                45deg,
+                #667eea,
+                #764ba2,
+                #667eea,
+                #764ba2
+            );
+            background-size: 300% 300%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -2;
+            opacity: 0.1;
         }
 
         .section-title {
@@ -243,6 +299,8 @@
             cursor: pointer;
             transform-style: preserve-3d;
             perspective: 1000px;
+            position: relative;
+            overflow: hidden;
         }
 
         .project-card:hover {
@@ -308,16 +366,137 @@
             transform: translateY(-2px);
         }
 
+        /* Project Modal */
+        .project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            background: rgba(30, 30, 46, 0.9);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(102, 126, 234, 0.2);
+            border: none;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(102, 126, 234, 0.4);
+            transform: rotate(90deg);
+        }
+
+        .modal-media {
+            width: 100%;
+            height: 300px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-media img, .modal-media video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .modal-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #667eea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .modal-tech {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .modal-description {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
         /* About Section */
         .about {
             padding: 5rem 2rem;
             background: rgba(255, 255, 255, 0.02);
             text-align: center;
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                45deg,
+                #667eea,
+                #764ba2,
+                #667eea,
+                #764ba2
+            );
+            background-size: 300% 300%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -2;
+            opacity: 0.1;
         }
 
         .about-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
         }
 
         .about p {
@@ -353,11 +532,30 @@
         .contact {
             padding: 5rem 2rem;
             text-align: center;
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                45deg,
+                #667eea,
+                #764ba2,
+                #667eea,
+                #764ba2
+            );
+            background-size: 300% 300%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -2;
+            opacity: 0.1;
         }
 
         .contact-content {
             max-width: 600px;
             margin: 0 auto;
+            position: relative;
         }
 
         .contact-links {
@@ -391,6 +589,9 @@
             .projects-grid { grid-template-columns: 1fr; }
             .contact-links { flex-direction: column; align-items: center; }
             .welcome-text { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .modal-content { padding: 1.5rem; }
+            .modal-title { font-size: 1.5rem; }
         }
 
         /* Scroll animations */
@@ -439,7 +640,7 @@
     <section class="projects fade-in" id="projects">
         <h2 class="section-title">Featured Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card" data-project="1">
                 <div class="project-header">
                     <h3 class="project-title">Electronic Repair Pricing & Sync Dashboard</h3>
                 </div>
@@ -455,12 +656,12 @@
                    them automatically with WooCommerce as products.
                 </p>
                 <div class="project-links">
-                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="#" class="project-link see-more">See More</a>
                     <a href="#" class="project-link">GitHub</a>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-project="2">
                 <div class="project-header">
                     <h3 class="project-title">navitank.xyz</h3>
                 </div>
@@ -475,12 +676,12 @@
                     dashboards, and other web applications.
                 </p>
                 <div class="project-links">
-                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="#" class="project-link see-more">See More</a>
                     <a href="#" class="project-link">GitHub</a>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-project="3">
                 <div class="project-header">
                     <h3 class="project-title">PsensorGUI</h3>
                 </div>
@@ -494,12 +695,12 @@
                     for monitoring and controlling sensors in real-time.
                 </p>
                 <div class="project-links">
-                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="#" class="project-link see-more">See More</a>
                     <a href="#" class="project-link">GitHub</a>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-project="4">
                 <div class="project-header">
                     <h3 class="project-title">n0x-bot</h3>
                 </div>
@@ -511,12 +712,12 @@
                     A modular Discord bot built using discord.py, designed to be extensible and easy to customize.
                 </p>
                 <div class="project-links">
-                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="#" class="project-link see-more">See More</a>
                     <a href="#" class="project-link">GitHub</a>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-project="5">
                 <div class="project-header">
                     <h3 class="project-title">RandomFlowerDeath</h3>
                 </div>
@@ -527,17 +728,15 @@
                 </div>
                 <p class="project-description">
                     A lightweight Minecraft Paper plugin that gives players a randomly selected,
-                    customized flower each time they respawn after dying. It features toggleable support per player,
-                    colorful names, lore, enchantments, glowing effects, 
-                    and hot-reloadable configuration, all controllable via permissions.
+                    customized flower each time they respawn after dying.
                 </p>
                 <div class="project-links">
-                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="#" class="project-link see-more">See More</a>
                     <a href="#" class="project-link">GitHub</a>
                 </div>
             </div>
 
-            <div class="project-card">
+            <div class="project-card" data-project="6">
                 <div class="project-header">
                     <h3 class="project-title">Social Media API</h3>
                 </div>
@@ -548,17 +747,210 @@
                     <span class="tech-tag">Docker</span>
                 </div>
                 <p class="project-description">
-                    Developed an asynchronous FastAPI service that fetches historical repair case data concurrently from
-                    the Repairline API and exports it as a downloadable Excel file, handling authentication, error cases,
-                    and efficient streaming.
+                    Developed an asynchronous FastAPI service that fetches historical repair case data.
                 </p>
                 <div class="project-links">
-                    <a href="#" class="project-link">Live Demo</a>
+                    <a href="#" class="project-link see-more">See More</a>
                     <a href="#" class="project-link">GitHub</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Project Modals -->
+    <div class="project-modal" id="projectModal1">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-media">
+                <!-- Replace with your actual media (img, video, or gif) -->
+                <img src="https://via.placeholder.com/800x400?text=Project+Screenshot" alt="Project Screenshot">
+            </div>
+            <h3 class="modal-title">Electronic Repair Pricing & Sync Dashboard</h3>
+            <div class="modal-tech">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">Woocommerce</span>
+                <span class="tech-tag">Express</span>
+            </div>
+            <p class="modal-description">
+                This comprehensive React dashboard was developed to streamline the repair pricing management 
+                for an electronics repair business. The system allows administrators to:
+                <br><br>
+                - Set and adjust repair prices for different device models and issues<br>
+                - Automatically sync these prices with WooCommerce as products<br>
+                - Manage inventory levels and service availability<br>
+                - Generate reports on repair volumes and profitability<br>
+                <br>
+                The backend uses Node.js with Express to handle the business logic and database operations, 
+                while the frontend provides an intuitive interface for staff to manage the repair services. 
+                The WooCommerce integration ensures that the online store always displays accurate pricing 
+                without manual updates.
+            </p>
+            <div class="modal-links">
+                <a href="#" class="project-link">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-modal" id="projectModal2">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-media">
+                <img src="https://via.placeholder.com/800x400?text=navitank.xyz+Screenshot" alt="navitank.xyz Screenshot">
+            </div>
+            <h3 class="modal-title">navitank.xyz</h3>
+            <div class="modal-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">Vercel</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Javascript</span>
+            </div>
+            <p class="modal-description">
+                My personal website serves as a central hub for all my projects and web applications. 
+                Key features include:
+                <br><br>
+                - Responsive design that works across all devices<br>
+                - Integration with various APIs and services<br>
+                - Custom dashboards for monitoring different metrics<br>
+                - Blog section for technical write-ups and tutorials<br>
+                <br>
+                The site is deployed on Vercel for optimal performance and uses PostgreSQL for data storage 
+                where needed. The clean, minimalist design focuses on usability while showcasing my 
+                development skills.
+            </p>
+            <div class="modal-links">
+                <a href="#" class="project-link">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-modal" id="projectModal3">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-media">
+                <img src="https://via.placeholder.com/800x400?text=PsensorGUI+Screenshot" alt="PsensorGUI Screenshot">
+            </div>
+            <h3 class="modal-title">PsensorGUI</h3>
+            <div class="modal-tech">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">.NET Framework 8</span>
+                <span class="tech-tag">Visual Studio</span>
+            </div>
+            <p class="modal-description">
+                PsensorGUI is a desktop application I developed to provide an intuitive interface for 
+                monitoring various sensors. Highlights include:
+                <br><br>
+                - Real-time visualization of sensor data (temperature, humidity, etc.)<br>
+                - Custom alert thresholds with notification system<br>
+                - Data logging and export capabilities<br>
+                - Plugin architecture for supporting different sensor types<br>
+                <br>
+                Built with C# and .NET Framework 8, the application demonstrates my ability to create 
+                performant desktop applications with clean, user-friendly interfaces. The modular design 
+                makes it easy to extend functionality for different use cases.
+            </p>
+            <div class="modal-links">
+                <a href="#" class="project-link">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-modal" id="projectModal4">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-media">
+                <img src="https://via.placeholder.com/800x400?text=n0x-bot+Screenshot" alt="n0x-bot Screenshot">
+            </div>
+            <h3 class="modal-title">n0x-bot</h3>
+            <div class="modal-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">discord.py</span>
+            </div>
+            <p class="modal-description">
+                n0x-bot is a feature-rich Discord bot designed for community management and entertainment. 
+                Key features include:
+                <br><br>
+                - Modular command system allowing easy extension<br>
+                - Custom permission system for different user roles<br>
+                - Automated moderation tools (anti-spam, link filtering)<br>
+                - Music playback from various sources<br>
+                - Mini-games and economy system<br>
+                <br>
+                Built with Python using the discord.py library, the bot demonstrates my ability to create 
+                complex, maintainable systems with clean architecture. The bot handles thousands of users 
+                across multiple servers with optimized performance.
+            </p>
+            <div class="modal-links">
+                <a href="#" class="project-link">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-modal" id="projectModal5">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-media">
+                <img src="https://via.placeholder.com/800x400?text=RandomFlowerDeath+Screenshot" alt="RandomFlowerDeath Screenshot">
+            </div>
+            <h3 class="modal-title">RandomFlowerDeath</h3>
+            <div class="modal-tech">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">Gradle</span>
+                <span class="tech-tag">Paper</span>
+            </div>
+            <p class="modal-description">
+                RandomFlowerDeath is a Minecraft plugin that enhances player experience by:
+                <br><br>
+                - Giving players unique, customized flowers upon death<br>
+                - Supporting toggleable participation per player<br>
+                - Offering colorful names, lore, and enchantments<br>
+                - Including glowing effects for special flowers<br>
+                - Featuring hot-reloadable configuration<br>
+                - Full permissions control for server admins<br>
+                <br>
+                Developed in Java using the Paper API, this plugin showcases my ability to create polished 
+                Minecraft modifications with extensive configuration options. The plugin is optimized for 
+                performance even on large servers with many concurrent players.
+            </p>
+            <div class="modal-links">
+                <a href="#" class="project-link">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-modal" id="projectModal6">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-media">
+                <img src="https://via.placeholder.com/800x400?text=Social+Media+API+Screenshot" alt="Social Media API Screenshot">
+            </div>
+            <h3 class="modal-title">Social Media API</h3>
+            <div class="modal-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">aiohttp</span>
+                <span class="tech-tag">Docker</span>
+            </div>
+            <p class="modal-description">
+                This asynchronous FastAPI service was designed to:
+                <br><br>
+                - Fetch historical repair case data from the Repairline API<br>
+                - Process and transform the data efficiently<br>
+                - Provide the data as a downloadable Excel file<br>
+                - Handle authentication and error cases gracefully<br>
+                - Support concurrent requests for optimal performance<br>
+                <br>
+                The service demonstrates my ability to create high-performance APIs using Python's 
+                async capabilities. The use of aiohttp for concurrent external API calls and 
+                streaming responses ensures efficient memory usage even with large datasets. The 
+                application is containerized with Docker for easy deployment.
+            </p>
+            <div class="modal-links">
+                <a href="#" class="project-link">GitHub</a>
+            </div>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section class="about fade-in" id="about">
@@ -692,6 +1084,35 @@
             });
         });
 
+        // Project modal functionality
+        document.querySelectorAll('.see-more').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const projectCard = this.closest('.project-card');
+                const projectId = projectCard.getAttribute('data-project');
+                const modal = document.getElementById(`projectModal${projectId}`);
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        document.querySelectorAll('.modal-close').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.project-modal').classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close modal when clicking outside content
+        document.querySelectorAll('.project-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
         // Initialize
         updateTime();
         createParticles();
@@ -703,11 +1124,11 @@
         // Add some micro-interactions to buttons
         document.querySelectorAll('.cta-button, .project-link, .contact-link').forEach(btn => {
             btn.addEventListener('mouseenter', function() {
-                this.style.transform = this.style.transform + ' scale(1.05)';
+                this.style.transform = 'scale(1.05)';
             });
             
             btn.addEventListener('mouseleave', function() {
-                this.style.transform = this.style.transform.replace(' scale(1.05)', '');
+                this.style.transform = '';
             });
         });
     </script>
